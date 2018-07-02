@@ -12,18 +12,28 @@ class QueryDictMixin(object):
     path_separator = "/"
 
     def _get(self, data_dictionary, split_path, default):
+        key = split_path.pop(0)
 
-        if len(split_path) == 1:
-            return dict.get(data_dictionary, split_path[0], default)
+        # Base termination recursion condition if we are at the end of
+        # the list of keys.  Return the value or the default value
+        if len(split_path) == 0:
+            return dict.get(data_dictionary, key, default)
 
-        if split_path[0] not in data_dictionary.keys():
+        # If the key doesn't exist then just return the default value
+        if key not in data_dictionary.keys():
             return default
 
-        return self._get(
-            data_dictionary[split_path[0]],
-            split_path[1:],
-            default
-        )
+        new_target = data_dictionary[key]
+
+        # Finally before we call ourselves again, make sure the value is
+        # of base type dictionary.  If not then return the default as
+        # we can be at the end of the path yet and we obviously are
+        # being called on a non nested dictionary object.
+        if not isinstance(new_target, dict):
+            return default
+
+        # If we get here start recursion on the new target
+        return self._get(new_target, split_path, default)
 
     def get(self, key, default=None):
         """

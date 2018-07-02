@@ -21,7 +21,7 @@ class AddingDictMixin(object):
         :return:
         """
         if isinstance(value, dict):
-            data = AddingDictMixin()
+            data = type(self)()
             for key in self.keys():
                 data[key] = self[key] + value.get(key, 0)
 
