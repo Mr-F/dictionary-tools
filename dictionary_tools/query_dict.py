@@ -12,6 +12,16 @@ class QueryDictMixin(object):
     path_separator = "/"
 
     def _get(self, data_dictionary, split_path, default):
+        """
+
+        Args:
+            data_dictionary:
+            split_path:
+            default:
+
+        Returns:
+
+        """
         key = split_path.pop(0)
 
         # Base termination recursion condition if we are at the end of

@@ -30,7 +30,9 @@ class AddingDictMixin(object):
                     data[key] = value[key]
             return data
 
-        raise TypeError('unsupported operand type(s) for +: %s and %s'%(type(self), type(value)))
+        raise TypeError('Unsupported operand type(s) for +: {} and {}'.format(
+            type(self), type(value)
+        ))
 
     def __radd__(self, other):
         """
@@ -41,5 +43,6 @@ class AddingDictMixin(object):
         :return:
         """
         return self.__add__(other)
+
 
 AddingDict = type('AddingDict', (AddingDictMixin, dict), {})
