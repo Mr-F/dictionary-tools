@@ -1,5 +1,8 @@
 # Dictionary Tools
 
+[![Build Status](https://travis-ci.org/Mr-F/dictionary-tools.svg?branch=master)](https://travis-ci.org/Mr-F/dictionary-tools)
+[![Coverage Status](https://coveralls.io/repos/github/Mr-F/dictionary-tools/badge.svg?branch=master)](https://coveralls.io/github/Mr-F/dictionary-tools?branch=master)
+
 This library contains a number of different types of dictionaries which extend
 the standard types of dictionaries the Python comes with.
 
