@@ -1,5 +1,6 @@
 # Dictionary Tools
 
+[![Code Health](https://landscape.io/github/Mr-F/dictionary-tools/master/landscape.svg?style=flat)](https://landscape.io/github/Mr-F/dictionary-tools/master)
 [![Build Status](https://travis-ci.org/Mr-F/dictionary-tools.svg?branch=master)](https://travis-ci.org/Mr-F/dictionary-tools)
 [![Coverage Status](https://coveralls.io/repos/github/Mr-F/dictionary-tools/badge.svg?branch=master)](https://coveralls.io/github/Mr-F/dictionary-tools?branch=master)
 
