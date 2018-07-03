@@ -4,5 +4,8 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install pytest pytest-cov
+  - pip install coveralls
 script:
   - py.test --cov dictionary_tools tests
+after_success:
+    - coveralls
