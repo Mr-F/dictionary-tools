@@ -1,3 +1,5 @@
+import numbers
+
 class AddingDictMixin(object):
     """
     This Mixin defined the operator which allows for the '+' operator
@@ -29,6 +31,12 @@ class AddingDictMixin(object):
                 if key not in self:
                     data[key] = value[key]
             return data
+
+        # TODO: Add future support to add numbers to dictionaries
+        # if isinstance(value, numbers.Number):
+        #     data = type(self)()
+        #     for key in self.keys():
+        #         data[key] = self[key] + value
 
         raise TypeError('Unsupported operand type(s) for +: {} and {}'.format(
             type(self), type(value)
